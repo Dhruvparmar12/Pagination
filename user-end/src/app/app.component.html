@@ -1,0 +1,29 @@
+<div class="container">
+             <h2>Pagination Task</h2>
+             <b>Page No:</b> {{currentIndex}}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>g_id</th>
+          <th>g_m_id</th>
+          <th>u_id</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let i of data'>
+          <td>{{i.g_id}}</td>
+          <td>{{i.g_m_id}}</td>
+          <td>{{i.u_id}}</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <ul class="pagination justify-content-center"  >
+  
+        <li class="page-item"><button class="page-link bg-primary text-white" (click)='onPrevious()'>Previous</button></li>
+        <li class="page-item " *ngFor='let i of totalPages' ><a class="page-link" (click)='onClick(i)'>{{i}}</a></li>
+        <li class="page-item "><button class="page-link bg-primary text-white" (click)='onNext()'>Next</button></li>
+      </ul>
+  </div>
+
+
